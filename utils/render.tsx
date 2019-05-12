@@ -5,7 +5,7 @@ import { StaticRouter } from 'react-router-dom'
 
 import App from '../src/App'
 
-const UrlRender = (url, data) => {
+const UrlRender = (url: any, data: Object) => {
   const markup = renderToString(
     <StaticRouter location={url} context={data}>
       <App />

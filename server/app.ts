@@ -1,10 +1,8 @@
-import express, { Request, Response } from 'express'
+import express from 'express'
 import compression from 'compression'
 import cors from 'cors'
 import expbs from 'express-handlebars'
-
-import homeRoute from './routes/home'
-import aboutRoute from './routes/about'
+import route from './routes'
 
 const app: express.Application = express()
 app.engine('handlebars', expbs())
@@ -14,8 +12,6 @@ app.use(compression())
 app.use(cors())
 app.use(express.static('public'))
 
-app.use('/', homeRoute)
-
-app.use('/about', aboutRoute)
+app.use('/', route)
 
 export { app }
