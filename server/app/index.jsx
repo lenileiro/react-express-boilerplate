@@ -6,7 +6,7 @@ import compression from 'compression'
 import cors from 'cors'
 import * as expbs from 'express-handlebars'
 
-import App from '../../shared/App'
+import App from '../../src/App'
 
 const app = express()
 app.engine('handlebars', expbs())

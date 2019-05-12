@@ -4,7 +4,7 @@ var nodeExternals = require('webpack-node-externals')
 var HtmlWebPackPlugin = require('html-webpack-plugin')
 
 var server = {
-  entry: './src/server/index.ts',
+  entry: './server/index.ts',
   target: 'node',
   mode: 'production',
   externals: [nodeExternals()],
@@ -34,7 +34,7 @@ var server = {
 }
 
 var browser = {
-  entry: './src/browser/hydrate.tsx',
+  entry: './browser/hydrate.tsx',
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'public'),
@@ -62,7 +62,7 @@ var browser = {
 }
 
 var build = {
-  entry: './src/browser/index.tsx',
+  entry: './browser/index.tsx',
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
