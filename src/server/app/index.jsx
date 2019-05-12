@@ -4,9 +4,13 @@ import express, { Request, Response } from 'express'
 import { StaticRouter } from 'react-router-dom'
 import compression from 'compression'
 import cors from 'cors'
+import * as expbs from 'express-handlebars'
+
 import App from '../../shared/App'
 
 const app = express()
+app.engine('handlebars', expbs())
+app.set('view engine', 'handlebars')
 
 app.use(compression())
 app.use(cors())
@@ -21,27 +25,9 @@ app.get('/', (req, res) => {
       <App />
     </StaticRouter>
   )
-  res.send(`
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <title>SSR App</title>
-            <script src="/bundle.js" defer></script>
-        </head>
-        <body>
-            <div id="app">${markup}</div>
-            <script defer>
-                if('serviceWorker' in navigator){
-                    try { 
-                        navigator.serviceWorker.register('sws.js')
-                    } catch (error){
-                        console.log(error)
-                    }
-                }
-            </script>
-        </body>
-    </html>
-`)
+  res.render('index', {
+    markup: markup
+  })
 })
 
 app.get('/about', (req, res) => {
@@ -53,27 +39,10 @@ app.get('/about', (req, res) => {
       <App />
     </StaticRouter>
   )
-  res.send(`
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <title>SSR App</title>
-            <script src="/bundle.js" defer></script>
-        </head>
-        <body>
-            <div id="app">${markup}</div>
-            <script defer>
-                if('serviceWorker' in navigator){
-                    try { 
-                        navigator.serviceWorker.register('sws.js')
-                    } catch (error){
-                        console.log(error)
-                    }
-                }
-            </script>
-        </body>
-    </html>
-`)
+
+  res.render('index', {
+    markup: markup
+  })
 })
 
 export { app }

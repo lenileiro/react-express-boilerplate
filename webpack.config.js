@@ -84,7 +84,7 @@ var build = {
 
   plugins: [
     new HtmlWebPackPlugin({
-      template: './src/index.html'
+      template: './views/index.html'
     })
   ]
 }
