@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express'
 import compression from 'compression'
 import cors from 'cors'
 import expbs from 'express-handlebars'
-import UrlRender from '../../utils/render'
+import UrlRender from '../utils/render'
 
 const app: express.Application = express()
 app.engine('handlebars', expbs())
