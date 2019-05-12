@@ -34,7 +34,7 @@ var server = {
 }
 
 var browser = {
-  entry: './browser/hydrate.tsx',
+  entry: './utils/hydrate.tsx',
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'public'),
@@ -62,7 +62,7 @@ var browser = {
 }
 
 var build = {
-  entry: './browser/index.tsx',
+  entry: './src/index.tsx',
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -89,7 +89,6 @@ var build = {
   ]
 }
 let configuration = env => {
-  console.log(env)
   if (env == 'server_build') {
     return server
   } else if (env == 'client_build') {

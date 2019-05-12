@@ -16,5 +16,5 @@
     "esModuleInterop": true,
     "jsx": "react"
   },
-  "include": ["src", "browser/index.tsx", "server/index.ts"]
+  "include": ["src", "src/index.tsx", "server/index.ts"]
 }
