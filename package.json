@@ -39,6 +39,10 @@
       "npm run lint:fix",
       "git add"
     ],
+    "*.jsx": [
+      "npm run lint:fix",
+      "git add"
+    ],
     "*.json": [
       "npm run lint:fix",
       "git add"
