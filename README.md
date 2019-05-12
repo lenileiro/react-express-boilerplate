@@ -16,11 +16,11 @@
 #### Run client on develpment mode
 
 ```
-    npm run run:client
+    npm run start:client
 ```
 
 ### Serve side render the react application
 
 ```
-    npm run run:server
+    npm run start:server
 ```
