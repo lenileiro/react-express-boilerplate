@@ -1,13 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import routes from './routes'
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <p>Hello World</p>
-      </div>
-    )
-  }
+const App = () => {
+  return (
+    <Switch>
+      {routes.map((route, i) => (
+        <Route key={i} {...route} />
+      ))}
+    </Switch>
+  )
 }
 
 export default App

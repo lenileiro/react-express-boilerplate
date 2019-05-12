@@ -14,13 +14,13 @@ var server = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.ts', '.js', '.tsx']
+    extensions: ['.ts', '.js', '.tsx', '.jsx']
   },
   devtool: 'source-map',
   module: {
     rules: [
       {
-        test: /\.(ts|tsx|js)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         use: 'babel-loader'
       }
@@ -42,13 +42,13 @@ var browser = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.ts', '.js', '.tsx']
+    extensions: ['.ts', '.js', '.tsx', '.jsx']
   },
   devtool: 'source-map',
   module: {
     rules: [
       {
-        test: /\.(ts|tsx|js)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         use: ['babel-loader']
       }
     ]
@@ -70,13 +70,13 @@ var build = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.ts', '.js', '.tsx']
+    extensions: ['.ts', '.js', '.tsx', '.jsx']
   },
   devtool: 'source-map',
   module: {
     rules: [
       {
-        test: /\.(ts|tsx|js)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         use: ['babel-loader']
       }
     ]
