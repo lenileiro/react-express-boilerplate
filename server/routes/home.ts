@@ -11,10 +11,10 @@ homeRoute.get('/', (req: Request, res: Response) => {
   }
   const data = serialize(initialData)
 
-  const markup = UrlRender(req.url, initialData)
-
+  const results = UrlRender(req.url, initialData)
+  console.log(results)
   res.render('index', {
-    markup,
+    results,
     data
   })
 })

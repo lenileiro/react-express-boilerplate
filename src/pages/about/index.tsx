@@ -1,27 +1,26 @@
 import React, { Component } from 'react'
 
-class About extends Component {
+class About extends Component<any, any> {
   constructor(props: any) {
     super(props)
 
+    this.state = {}
+  }
+  componentWillMount() {
     let initialdata
 
-    if (props.staticContext) {
-      initialdata = props.staticContext
+    if (this.props.staticContext) {
+      initialdata = this.props.staticContext
     } else {
       initialdata = (window as any).__initialData__
     }
-
-    this.state = {
-      ...initialdata
-    }
+    this.setState({ ...initialdata })
   }
 
   render() {
     return (
       <div>
         <p>About Page</p>
-        <button onClick={() => console.log('clicked')}>click</button>
       </div>
     )
   }
