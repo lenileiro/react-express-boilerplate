@@ -1,4 +1,3 @@
-import { hydrate } from 'react-dom'
 var path = require('path')
 var webpack = require('webpack')
 var nodeExternals = require('webpack-node-externals')
@@ -95,9 +94,7 @@ let configuration = env => {
     return server
   } else if (env == 'client_build') {
     return build
-  } else if (env == 'server_run') {
-    return [browser, server]
-  } else if (env == 'client_browser') {
+  } else if (env == 'client_public') {
     return browser
   }
 }

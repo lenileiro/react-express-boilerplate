@@ -6,6 +6,7 @@ const app: express.Application = express()
 
 app.use(compression())
 app.use(cors())
+app.use(express.static('public'))
 
 app.get('/', (req: Request, res: Response) => {
   res.send('hello world')

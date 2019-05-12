@@ -6,13 +6,20 @@
     "scripts": {
         "test": "jest",
         "build:client": "tsc && webpack -w --env=client_build",
+        "start:client": "npm run lint:fix && webpack-dev-server -w --env=client_build --mode development --open",
         "build:server": "tsc && webpack -w --env=server_build",
-        "build:hydrate": "tsc && webpack -w --env=client_browser",
-        "run:server": "npm run build:hydrate & npm run build:server & nodemon ./lib/server.prod.js",
-        "run:client": "npm run lint:fix && webpack-dev-server -w --env=client_build --mode development --open",
-        "lint": "npx eslint 'src/**/*.ts'",
-        "lint:fix": "npx prettier-eslint 'src/**/*.ts' 'src/**/*.tsx' 'package.json' --write",
+        "build:public": "tsc && webpack -w --env=client_public",
+        "start:server": "npm run build:public & npm run build:server & nodemon ./lib/server.prod.js",
+        "lint": "npx eslint 'src/**/*.tsx' 'src/**/*.ts'",
+        "lint:fix": "npx prettier-eslint 'src/**/*.tsx' 'src/**/*.ts' 'package.json' --write",
         "coverall": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    },
+    "scriptsComments": {
+        "build:client": "build react into a build:: same as react-create package",
+        "start:client": "run the react bundle using webpack server",
+        "build:server": "build express server :: ts -> js",
+        "build:public": "build react hydration file into public bundle to be servered as static file",
+        "start:server": "build file (server & client) then run server"
     },
     "husky": {
         "hooks": {
