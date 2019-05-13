@@ -6,11 +6,15 @@ const port = process.env.PORT || 3000
 
 const server = http.createServer(app)
 
-server.listen(port)
-
-server.on('listening', () => {
-  console.log(`server started at http://localhost:${port}`)
-})
+try {
+  server.listen(port)
+  server.on('listening', () => {
+    console.log(`server started at http://localhost:${port}`)
+  })
+    
+} catch (error) {
+  console.log(error)
+}
 
 process.stdin.resume() //so the program will not close instantly
 
