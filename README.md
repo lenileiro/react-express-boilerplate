@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/lenileiro/3d-visualization.svg?style=svg)](https://circleci.com/gh/lenileiro/3d-visualization)
 [![Coverage Status](https://coveralls.io/repos/github/lenileiro/3d-visualization/badge.svg?branch=develop)](https://coveralls.io/github/lenileiro/3d-visualization?branch=develop)
 
-# 3d-visualization
+# React Express Boilerplate
 
 # Install
 ``` 
