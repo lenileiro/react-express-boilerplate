@@ -1,5 +1,5 @@
- "husky": {
-    "hooks": {
-      "pre-commit": "npm run husky"
+{
+"hooks": {
+    "pre-commit": "npm run husky"
     }
-  }
+}
