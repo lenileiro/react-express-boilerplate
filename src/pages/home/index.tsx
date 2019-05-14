@@ -12,14 +12,16 @@ class Home extends Component<any, any> {
     if (this.props.staticContext) {
       initialdata = this.props.staticContext
     } else {
-      initialdata = (window as any).__initialData__
+      try {
+        initialdata = (window as any).__initialData__
+      } catch (ReferenceError) {}
     }
     this.setState({ ...initialdata })
   }
   render() {
     return (
       <div>
-        <p>Home Page</p>
+        <p className="homepage">Home Page</p>
         <p>{this.state.name}</p>
       </div>
     )
