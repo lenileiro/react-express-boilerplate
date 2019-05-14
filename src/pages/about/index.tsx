@@ -12,7 +12,9 @@ class About extends Component<any, any> {
     if (this.props.staticContext) {
       initialdata = this.props.staticContext
     } else {
-      initialdata = (window as any).__initialData__
+      try {
+        initialdata = (window as any).__initialData__
+      } catch (ReferenceError) {}
     }
     this.setState({ ...initialdata })
   }
@@ -20,7 +22,7 @@ class About extends Component<any, any> {
   render() {
     return (
       <div>
-        <p>About Page</p>
+        <h1 className="aboutpage">About Page</h1>
       </div>
     )
   }
