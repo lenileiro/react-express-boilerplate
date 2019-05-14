@@ -27,7 +27,23 @@
     }
   },
   "lint-staged": {
-    "^.+\\.(ts|tsx|js|jsx)?$" : [
+    "*.js": [
+      "npm run lint:fix",
+      "git add"
+    ],
+    "*.ts": [
+      "npm run lint:fix",
+      "git add"
+    ],
+    "*.tsx": [
+      "npm run lint:fix",
+      "git add"
+    ],
+    "*.jsx": [
+      "npm run lint:fix",
+      "git add"
+    ],
+    "*.json": [
       "npm run lint:fix",
       "git add"
     ]
