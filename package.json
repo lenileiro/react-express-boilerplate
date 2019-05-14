@@ -12,7 +12,8 @@
     "start:server": "npm run build:public & npm run build:server & nodemon ./lib/server.prod.js",
     "lint": "npx eslint 'src/**/*.tsx' 'src/**/*.ts' 'src/**/*.js'",
     "lint:fix": "npx prettier-eslint 'src/**/*.tsx' 'src/**/*.ts' 'src/**/*.js' 'package.json' --write",
-    "coverall": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    "coverall": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "husky": "lint-staged && npm run test "
   },
   "scriptsComments": {
     "build:client": "build react into a build:: same as react-create package",
@@ -23,8 +24,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm test"
+      "pre-commit": "npm run husky"
     }
   },
   "lint-staged": {
