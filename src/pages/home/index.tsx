@@ -6,6 +6,7 @@ class Home extends Component<any, any> {
 
     this.state = {}
   }
+
   componentWillMount() {
     let initialdata
 
@@ -18,6 +19,7 @@ class Home extends Component<any, any> {
     }
     this.setState({ ...initialdata })
   }
+
   render() {
     return (
       <div>
