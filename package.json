@@ -13,7 +13,7 @@
     "lint": "npx eslint 'src/**/*.tsx' 'src/**/*.ts' 'src/**/*.js'",
     "lint:fix": "npx prettier-eslint 'src/**/*.tsx' 'src/**/*.ts' 'src/**/*.js' 'package.json' --write",
     "coverall": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "husky": "lint-staged"
+    "husky": "npm run test && lint-staged"
   },
   "scriptsComments": {
     "build:client": "build react into a build:: same as react-create package",
