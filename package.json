@@ -22,6 +22,11 @@
     "build:public": "build react hydration file into public bundle to be servered as static file",
     "start:server": "build file (server & client) then run server"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run husky"
+    }
+  },
   "lint-staged": {
     "*.js": [
       "npm run lint:fix",
