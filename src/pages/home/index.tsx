@@ -1,29 +1,29 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class Home extends Component<any, any> {
   constructor(props: any) {
-    super(props)
+    super(props);
 
-    this.state = {}
+    this.state = {};
   }
 
   componentWillMount() {
-    let initialdata
+    let initialdata;
 
     if (this.props.staticContext) {
-      initialdata = this.props.staticContext
+      initialdata = this.props.staticContext;
     } else {
       try {
         initialdata = (window as any)
           .__initialData__(window as any)
-          .__initialData__.replace(/</g, '\\u003c')
+          .__initialData__.replace(/</g, '\\u003c');
       } catch (ReferenceError) {}
     }
-    this.setState({ ...initialdata })
+    this.setState({ ...initialdata });
   }
 
   componentDidMount() {
-    ;(window as any).__initialData__.replace(/</g, '\\u003c')
+    (window as any).__initialData__.replace(/</g, '\\u003c');
   }
 
   render() {
@@ -32,8 +32,8 @@ class Home extends Component<any, any> {
         <p className="homepage">Home Page</p>
         <p>{this.state.name}</p>
       </div>
-    )
+    );
   }
 }
 
-export default Home
+export default Home;

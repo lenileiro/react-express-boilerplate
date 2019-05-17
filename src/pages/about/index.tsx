@@ -1,22 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class About extends Component<any, any> {
   constructor(props: any) {
-    super(props)
+    super(props);
 
-    this.state = {}
+    this.state = {};
   }
   componentWillMount() {
-    let initialdata
+    let initialdata;
 
     if (this.props.staticContext) {
-      initialdata = this.props.staticContext
+      initialdata = this.props.staticContext;
     } else {
       try {
-        initialdata = (window as any).__initialData__
+        initialdata = (window as any).__initialData__;
       } catch (ReferenceError) {}
     }
-    this.setState({ ...initialdata })
+    this.setState({ ...initialdata });
   }
 
   render() {
@@ -24,8 +24,8 @@ class About extends Component<any, any> {
       <div>
         <h1 className="aboutpage">About Page</h1>
       </div>
-    )
+    );
   }
 }
 
-export default About
+export default About;
