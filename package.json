@@ -10,8 +10,8 @@
     "build:server": "tsc && webpack -w --env=server_build",
     "build:public": "tsc && webpack -w --env=client_public",
     "start:server": "npm run build:public & npm run build:server & nodemon ./lib/server.prod.js",
-    "lint": "npx eslint 'src/**/*.tsx' 'src/**/*.ts' 'src/**/*.js'",
-    "lint:fix": "npx prettier-eslint 'src/**/*.tsx' 'src/**/*.ts' 'src/**/*.js' 'package.json' --write",
+    "lint": "npx eslint 'src/**/*.{ts,tsx,js,jsx,package.json}'",
+    "lint:fix": "npx prettier-eslint 'src/**/*.{ts,tsx,js,jsx,package.json}' --write",
     "coverall": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "husky": "lint-staged && npm run test "
   },
@@ -28,23 +28,7 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "npm run lint:fix",
-      "git add"
-    ],
-    "*.ts": [
-      "npm run lint:fix",
-      "git add"
-    ],
-    "*.tsx": [
-      "npm run lint:fix",
-      "git add"
-    ],
-    "*.jsx": [
-      "npm run lint:fix",
-      "git add"
-    ],
-    "*.json": [
+    "*.{ts,tsx,js,jsx}": [
       "npm run lint:fix",
       "git add"
     ]
