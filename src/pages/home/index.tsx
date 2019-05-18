@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Home extends Component<any, any> {
   constructor(props: any) {
@@ -16,14 +16,10 @@ class Home extends Component<any, any> {
       try {
         initialdata = (window as any)
           .__initialData__(window as any)
-          .__initialData__.replace(/</g, '\\u003c');
+          .__initialData__.replace(/</g, "\\u003c");
       } catch (ReferenceError) {}
     }
     this.setState({ ...initialdata });
-  }
-
-  componentDidMount() {
-    (window as any).__initialData__.replace(/</g, '\\u003c');
   }
 
   render() {

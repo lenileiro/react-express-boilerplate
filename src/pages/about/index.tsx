@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class About extends Component<any, any> {
   constructor(props: any) {
@@ -6,6 +6,7 @@ class About extends Component<any, any> {
 
     this.state = {};
   }
+
   componentWillMount() {
     let initialdata;
 

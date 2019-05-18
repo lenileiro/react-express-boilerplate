@@ -1,12 +1,16 @@
 {
-    "extends": "airbnb",
-    "rules": {
-      "import-name": true,
-      "no-unused-vars": 0,
-      "import/no-unresolved":0,
-      "react/jsx-filename-extension":0,
-      "no-undef":0,
-      "import/no-extraneous-dependencies":0,
-      "react/no-array-index-key":0
-    }
-  }
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/restrict-plus-operands": "error"
+  },
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ]
+}

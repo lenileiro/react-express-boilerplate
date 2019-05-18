@@ -1,23 +1,23 @@
-import { Router, Request, Response } from 'express';
-import serialize from 'serialize-javascript';
+import { Router, Request, Response } from "express";
+import serialize from "serialize-javascript";
 
-import UrlRender from '../../utils/render';
-import apiRoute from '../api';
+import UrlRender from "../../utils/render";
+import apiRoute from "../api";
 const homeRoute = Router();
 
-homeRoute.get('/', (req: Request, res: Response) => {
+homeRoute.get("/", (req: Request, res: Response) => {
   const initialData = {
-    name: 'sam',
+    name: "sam"
   };
   const data = serialize(initialData);
 
   const markup = UrlRender(req.url, initialData);
 
-  res.render('index', {
+  res.render("index", {
     markup,
-    data,
+    data
   });
 });
-homeRoute.use('/api', apiRoute);
+homeRoute.use("/api", apiRoute);
 
 export default homeRoute;

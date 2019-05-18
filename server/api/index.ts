@@ -1,10 +1,10 @@
-import { Router, Request, Response } from 'express';
+import { Router, Request, Response } from "express";
 const apiRoute = Router();
 
-apiRoute.get('/', (req: Request, res: Response) => {
+apiRoute.get("/", (req: Request, res: Response) => {
   res.json({
-    name: 'sam',
-    age: 34,
+    name: "sam",
+    age: 34
   });
 });
 
