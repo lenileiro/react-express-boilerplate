@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/lenileiro/3d-visualization.svg?style=svg)](https://circleci.com/gh/lenileiro/3d-visualization)
+[![CircleCI](https://circleci.com/gh/lenileiro/react-express-boilerplate.svg?style=svg)](https://circleci.com/gh/lenileiro/react-express-boilerplate)
 [![Coverage Status](https://coveralls.io/repos/github/lenileiro/3d-visualization/badge.svg?branch=develop)](https://coveralls.io/github/lenileiro/3d-visualization?branch=develop)
 
 # React Express Boilerplate
